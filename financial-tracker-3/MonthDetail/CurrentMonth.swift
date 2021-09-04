@@ -16,42 +16,58 @@ struct CurrentMonthView: View {
     NavigationView {
       MonthDetail(transactions: $appModel.transactions, year: Date().year, month: Date().month())
         .toolbar {
-          ToolbarItem(placement: .navigationBarLeading) {
+          SettingsToolBarItem
+          AddTransactionToolbarItem
+        }
+        .fullScreenCover(isPresented: $isAddingTransaction) {
+          AddTransactionForm
+        }
+        .fullScreenCover(isPresented: $isSettingsPageActive) {
+          SettingsSheetView
+        }
+    }
+  }
+}
+
+extension CurrentMonthView {
+  var SettingsToolBarItem: ToolbarItem<Void, Button<Image>> {
+    ToolbarItem(placement: .navigationBarLeading) {
+      Button(action: {
+        isSettingsPageActive.toggle()
+      }, label: {
+        Image(systemName: "gearshape")
+      })
+    }
+  }
+  
+  var AddTransactionToolbarItem: ToolbarItem<Void, Button<Image>> {
+    ToolbarItem(placement: .navigationBarTrailing){
+      Button(action: {
+        isAddingTransaction.toggle()
+      }, label: {
+        Image(systemName: "plus")
+      })
+    }
+  }
+  
+  var AddTransactionForm: some View {
+    AddNewTransactionForm(
+      transactions: $appModel.transactions,
+      isEditFormShowing: $isAddingTransaction)
+      .navigationTitle("Record Transaction")
+  }
+  
+  var SettingsSheetView: some View {
+    NavigationView {
+      SettingsView()
+        .navigationTitle("Settings")
+        .toolbar {
+          ToolbarItem(placement: .navigationBarTrailing) {
             Button(action: {
               isSettingsPageActive.toggle()
             }, label: {
-              Image(systemName: "gearshape")
+              Text("Done")
             })
-          }
-          ToolbarItemGroup(placement: .navigationBarTrailing){
-            Button(action: {
-              isAddingTransaction.toggle()
-            }, label: {
-              Image(systemName: "plus")
-            })
-          }
-        }
-        .fullScreenCover(isPresented: $isAddingTransaction) {
-          NavigationView {
-            AddNewTransactionForm(
-              transactions: $appModel.transactions,
-              isEditFormShowing: $isAddingTransaction)
-              .navigationTitle("Record Transaction")
-          }
-        }
-        .fullScreenCover(isPresented: $isSettingsPageActive) {
-          NavigationView {
-            SettingsView()
-              .navigationTitle("Settings")
-              .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                  Button(action: {
-                    isSettingsPageActive.toggle()
-                  }, label: {
-                    Text("Done")
-                  })
-                }
-              }
           }
         }
     }
