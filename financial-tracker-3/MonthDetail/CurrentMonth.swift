@@ -43,6 +43,15 @@ struct CurrentMonthView: View {
           NavigationView {
             SettingsView()
               .navigationTitle("Settings")
+              .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                  Button(action: {
+                    isSettingsPageActive.toggle()
+                  }, label: {
+                    Text("Done")
+                  })
+                }
+              }
           }
         }
     }
