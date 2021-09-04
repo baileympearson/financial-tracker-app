@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 enum TransactionType: String, Codable {
   case income, expense
 }
 
 struct Transaction: Identifiable, Codable {
-  var id = UUID()
+  @DocumentID var id: String?
   
   var date: Date
   var amount: Double

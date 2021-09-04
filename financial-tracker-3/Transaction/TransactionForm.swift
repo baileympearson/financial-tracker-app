@@ -15,7 +15,7 @@ class TransactionFormViewModel: ObservableObject {
   @Published var date = Date()
   @Published var type = TransactionType.expense
   
-  private var id: UUID? = nil
+  private var id: String? = nil
   
   private var onSave: ((Transaction) -> Void)?
   

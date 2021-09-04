@@ -1,1 +1,8 @@
-*xcodeproj
+.DS_Store
+Pods/
+xcuserdata/
+*.xcworkspace/
+GoogleService-Info.plist
+Secrets
+Secrets.tar
+financial-tracker-3.xcodeproj

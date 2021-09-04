@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 struct TransactionCategory: Identifiable, Codable, Hashable {
-  var id: UUID = UUID()
+  @DocumentID var id: String?
   var name: String
 }
