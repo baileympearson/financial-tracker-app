@@ -46,7 +46,6 @@ struct CurrentMonthView: View {
           }
         }
     }
-    
   }
 }
 

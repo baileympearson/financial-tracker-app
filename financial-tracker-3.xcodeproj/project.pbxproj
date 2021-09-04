@@ -87,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				D41043D326DF98FB00C3EBEE /* HistoryList.swift */,
-				D41043D926E00C5600C3EBEE /* MonthDetail.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -140,6 +139,7 @@
 			children = (
 				D41043E626E248BB00C3EBEE /* CurrentMonth.swift */,
 				D41043D026DE416300C3EBEE /* SpendingOverviewTable.swift */,
+				D41043D926E00C5600C3EBEE /* MonthDetail.swift */,
 			);
 			path = MonthDetail;
 			sourceTree = "<group>";

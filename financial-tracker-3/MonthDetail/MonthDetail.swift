@@ -66,7 +66,8 @@ struct MonthDetail: View {
             .font(.title3)
           }
       }
-    }.navigationTitle(pageTitle)
+    }
+    .navigationTitle(pageTitle)
     
   }
 }
