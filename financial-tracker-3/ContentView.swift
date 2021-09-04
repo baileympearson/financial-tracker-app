@@ -21,7 +21,7 @@ extension ContentView: View {
           Text("Monthly Overview")
         }
       NavigationView {
-        HistoryList(transactions: $appModel.transactions)
+        HistoryList()
           .navigationTitle("Past Months")
       }.tabItem {
         Image(systemName: "list.dash")

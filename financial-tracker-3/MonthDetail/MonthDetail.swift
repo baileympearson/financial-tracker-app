@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MonthDetail: View {
-  @Binding var transactions: [Transaction]
+  @EnvironmentObject var appModel: AppModel
   let year: String
   let month: String
   
@@ -18,7 +18,7 @@ struct MonthDetail: View {
   
   var transactionsForMonth: [Transaction] {
     let key = "\(year) \(month)"
-    return transactions.groupedByMonth[key] ?? []
+    return appModel.transactions.groupedByMonth[key] ?? []
   }
   
   var body: some View {
@@ -52,7 +52,7 @@ struct MonthDetail: View {
             TransactionTable(transactions: transactionsForMonth)
             if !transactionsForMonth.isEmpty {
               NavigationLink(
-                destination: TransactionDetailsList(month: month, transactions: $transactions),
+                destination: TransactionDetailsList(month: month),
                 label: {
                   Text("View All")
                 })
@@ -75,7 +75,8 @@ struct MonthDetail: View {
 struct MonthDetail_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView{
-      MonthDetail(transactions: .constant(mockTransactions), year: "2021", month: "August")
+      MonthDetail(year: "2021", month: "August")
+        .environmentObject(AppModel.mockModel)
     }
   }
 }

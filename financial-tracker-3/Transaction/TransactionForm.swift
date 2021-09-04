@@ -15,69 +15,94 @@ class TransactionFormViewModel: ObservableObject {
   @Published var date = Date()
   @Published var type = TransactionType.expense
   
+  private var id: UUID? = nil
+  
+  private var onSave: ((Transaction) -> Void)?
+  
   func transaction() -> Transaction {
-    Transaction(date: date,
-                amount: Double(amount) ?? 0.0,
-                description: description,
-                category: category,
-                type: type)
+    if let id = id {
+      return Transaction(id: id,
+                         date: date,
+                         amount: Double(amount) ?? 0.0,
+                         description: description,
+                         category: category,
+                         type: type)
+    }
+    
+    return Transaction(date: date,
+                       amount: Double(amount) ?? 0.0,
+                       description: description,
+                       category: category,
+                       type: type)
+  }
+  
+  func onSave(onSave: @escaping (Transaction) -> Void) -> Self {
+    self.onSave = onSave
+    return self
+  }
+  
+  convenience init(from transaction: Transaction) {
+    self.init()
+    self.reset(to: transaction)
+  }
+  
+  func save() {
+    onSave?(transaction())
+  }
+  
+  func clear() {
+    self.reset(to: .empty)
+  }
+  
+  func reset(to transaction: Transaction) {
+    self.amount = transaction.amount == 0 ? "" : String(transaction.amount)
+    self.description = transaction.description
+    self.category = transaction.category
+    self.date = transaction.date
+    self.type = transaction.type
+    self.id = transaction.id
   }
 }
 
 struct TransactionForm: View {
   @EnvironmentObject var appModel: AppModel
-  @Binding var transaction: Transaction
-  var onSave: (Transaction) -> Void
-  
-  @ObservedObject var state = TransactionFormViewModel()
-  
-  init(transaction: Binding<Transaction>, onSave: @escaping (Transaction) -> Void) {
-    self._transaction = transaction
-    self.onSave = onSave
-    state.amount = self.transaction.amount == 0 ? "" : "\(self.transaction.amount)"
-    state.date = self.transaction.date
-    state.description = self.transaction.description
-    state.category = self.transaction.category
-    state.type = self.transaction.type
-  }
+  @EnvironmentObject var viewModel: TransactionFormViewModel
   
   var body: some View {
     Form {
       Section {
         VStack(alignment: .leading) {
-          TextField("Description", text: $state.description)
-//                    Text("Description is required.")
-//                      .foregroundColor(.red)
-//                      .font(.caption)
+          TextField("Description", text: $viewModel.description)
+          //                    Text("Description is required.")
+          //                      .foregroundColor(.red)
+          //                      .font(.caption)
         }
-        TextField("Amount", text: $state.amount)
+        TextField("Amount", text: $viewModel.amount)
           .keyboardType(.decimalPad)
-          .onReceive(Just(state.amount)) { newValue in
+          .onReceive(Just(viewModel.amount)) { newValue in
             let filtered = newValue.filter { "0123456789.".contains($0) }
             if filtered != newValue {
-              state.amount = filtered
+              viewModel.amount = filtered
             }
           }
-        Picker("Type", selection: $state.type) {
+        Picker("Type", selection: $viewModel.type) {
           Text("Expense").tag(TransactionType.expense)
           Text("Income").tag(TransactionType.income)
         }.pickerStyle(SegmentedPickerStyle())
         
-        if transaction.type == .expense {
-          Picker("Category", selection: $state.category, content: {
-            ForEach(appModel.categories) { category in
-              Text(category.name).tag(category)
-            }
-          })
-        }
+        Picker("Category", selection: $viewModel.category, content: {
+          ForEach(appModel.categories) { category in
+            Text(category.name).tag(category)
+          }
+        })
       }
       
       Section (header: Text("Date of Transaction")) {
-        DatePicker("Date", selection: $state.date, in: ...Date(), displayedComponents: [.date])
+        DatePicker("Date", selection: $viewModel.date, in: ...Date(), displayedComponents: [.date])
       }
       
       Button(action: {
-        onSave(state.transaction())
+        viewModel.save()
       }, label: {
         Text("Save Transaction")
       }).disabled(false)
@@ -88,7 +113,7 @@ struct TransactionForm: View {
 struct TransactionForm_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
-      TransactionForm(transaction: .constant(mockTransactions[0]), onSave: {_ in})
+      TransactionForm()
         .navigationTitle("Record Transaction")
         .environmentObject(AppModel.mockModel)
     }

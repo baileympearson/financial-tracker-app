@@ -10,15 +10,15 @@ import SwiftUI
 let MAX_TRANSACTIONS = 3
 
 struct HistoryList: View {
-  @Binding var transactions: [Transaction]
+  @EnvironmentObject var appModel: AppModel
   
   var body: some View {
     List {
-      ForEach(transactions.uniqueMonths, id: \.year ) { (year, months) in
+      ForEach(appModel.transactions.uniqueMonths, id: \.year ) { (year, months) in
         Section(header: Text("\(year)")) {
           ForEach(months, id: \.self) { month in
             NavigationLink(
-              destination: MonthDetail(transactions: $transactions, year: year, month: month),
+              destination: MonthDetail(year: year, month: month),
               label: {
                 Text(month).font(.callout)
                 
@@ -34,8 +34,9 @@ struct HistoryList: View {
 struct HistoryList_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
-      HistoryList(transactions: .constant(mockTransactions))
+      HistoryList()
         .navigationTitle("Past Months")
+        .environmentObject(AppModel.mockModel)
     }
   }
 }

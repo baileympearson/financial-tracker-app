@@ -12,7 +12,7 @@ struct EditTransactionForm: View {
   @Binding var isViewShowing: Bool
   
   var body: some View {
-    TransactionForm(transaction: $transaction, onSave: saveButtonClicked)
+    TransactionForm()
   }
   
   func saveButtonClicked(_ transaction: Transaction) {

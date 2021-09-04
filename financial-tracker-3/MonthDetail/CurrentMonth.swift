@@ -14,12 +14,12 @@ struct CurrentMonthView: View {
   
   var body: some View {
     NavigationView {
-      MonthDetail(transactions: $appModel.transactions, year: Date().year, month: Date().month())
+      MonthDetail(year: Date().year, month: Date().month())
         .toolbar {
           SettingsToolBarItem
           AddTransactionToolbarItem
         }
-        .fullScreenCover(isPresented: $isAddingTransaction) {
+        .sheet(isPresented: $isAddingTransaction) {
           AddTransactionForm
         }
         .fullScreenCover(isPresented: $isSettingsPageActive) {
@@ -51,10 +51,10 @@ extension CurrentMonthView {
   }
   
   var AddTransactionForm: some View {
-    AddNewTransactionForm(
-      transactions: $appModel.transactions,
-      isEditFormShowing: $isAddingTransaction)
-      .navigationTitle("Record Transaction")
+    NavigationView {
+      AddNewTransactionForm(isEditFormShowing: $isAddingTransaction)
+        .navigationTitle("Record Transaction")
+    }
   }
   
   var SettingsSheetView: some View {

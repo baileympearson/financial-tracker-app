@@ -8,23 +8,26 @@
 import SwiftUI
 
 struct AddNewTransactionForm: View {
-  @Binding var transactions: [Transaction]
+  @EnvironmentObject var appModel: AppModel
+  @State private var formViewModel = TransactionFormViewModel(from: .empty)
   @State private var transaction: Transaction = .empty
   @State private var isSuccessAlertShowing = false
   @Binding var isEditFormShowing: Bool
   
   var successAlert: Alert {
-    Alert(
+    let dismissButton = Alert.Button.default(Text("OK"), action: {
+      isSuccessAlertShowing.toggle()
+      isEditFormShowing.toggle()
+    })
+    return Alert(
       title: Text("Success!"),
       message: Text("We've recorded your new transaction."),
-      dismissButton: .default(Text("OK"), action: {
-        isSuccessAlertShowing.toggle()
-        isEditFormShowing.toggle()
-      }))
+      dismissButton: dismissButton)
   }
   
   var body: some View {
-    TransactionForm(transaction: $transaction, onSave: saveButtonClicked)
+    TransactionForm()
+      .environmentObject(formViewModel.onSave(onSave: saveButtonClicked))
       .alert(isPresented: $isSuccessAlertShowing) {
         successAlert
       }
@@ -40,14 +43,15 @@ struct AddNewTransactionForm: View {
   }
   
   func saveButtonClicked(_ transaction: Transaction) {
-    transactions.insert(transaction, at: 0)
-    self.transaction = .empty
+    let transaction = formViewModel.transaction()
+    appModel.transactions.insert(transaction, at: 0)
     isSuccessAlertShowing = true
   }
 }
 
 struct AddNewTransactionForm_Previews: PreviewProvider {
   static var previews: some View {
-    AddNewTransactionForm(transactions: .constant(mockTransactions), isEditFormShowing: .constant(true))
+    AddNewTransactionForm(isEditFormShowing: .constant(true))
+      .environmentObject(AppModel.mockModel)
   }
 }

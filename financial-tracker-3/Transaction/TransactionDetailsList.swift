@@ -9,19 +9,19 @@ import SwiftUI
 
 struct TransactionDetailsList: View {
   var month: String
-  @Binding var transactions: [Transaction]
+  @EnvironmentObject var appModel: AppModel
   @State private var editMode: EditMode = .inactive
   @State private var isEditingTransaction = false
   @State private var editingTransaction: Transaction? = nil
-  
-  @State private var selectedIndex: Int? = nil
+    
+  @State private var formViewModel = TransactionFormViewModel(from: .empty)
     
   var body: some View {
     List {
-      ForEach(transactions.transactionsInCurrentMonth) { transaction in
+      ForEach(appModel.transactions.transactionsInCurrentMonth) { transaction in
           TransactionListItem(transaction: transaction)
             .onTapGesture {
-              selectedIndex = transactions.firstIndex(where: { $0.id == transaction.id})
+              formViewModel.reset(to: transaction)
               isEditingTransaction = true
             }
       }
@@ -33,16 +33,31 @@ struct TransactionDetailsList: View {
       ToolbarItem(placement: .navigationBarTrailing,
                   content: EditButton.init)
     }
-    .sheet(isPresented: $isEditingTransaction, onDismiss: {
-      selectedIndex = nil
-    }, content: {
-      EditTransactionForm(transaction: $transactions[selectedIndex!], isViewShowing: $isEditingTransaction)
+    .sheet(isPresented: $isEditingTransaction, content: {
+      NavigationView {
+        TransactionForm()
+          .environmentObject(formViewModel.onSave() { transaction in
+            appModel.update(transaction: transaction)
+            isEditingTransaction = false
+          })
+          .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+              Button(action: {
+                isEditingTransaction = false
+                formViewModel.reset(to: .empty)
+              }, label: {
+                Text("Cancel")
+              })
+            }
+          }
+          .navigationTitle("Edit Transaction")
+      }
     })
     .environment(\.editMode, $editMode)
   }
   
   func deleteTransaction(index: IndexSet) {
-    transactions.remove(atOffsets: index)
+    appModel.transactions.remove(atOffsets: index)
   }
 }
 
@@ -50,7 +65,8 @@ struct TransactionDetailsList_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
       
-      TransactionDetailsList(month: "august", transactions: .constant(mockTransactions))
+      TransactionDetailsList(month: "august")
+        .environmentObject(AppModel.mockModel)
     }
   }
 }

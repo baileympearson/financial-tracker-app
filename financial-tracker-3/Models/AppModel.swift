@@ -17,3 +17,13 @@ class AppModel : ObservableObject {
     self.categories = categories
   }
 }
+
+extension AppModel {
+  func update(transaction: Transaction) {
+    guard let index = transactions.firstIndex(where: { $0.id == transaction.id }) else {
+      return
+    }
+    
+    transactions[index] = transaction
+  }
+}
