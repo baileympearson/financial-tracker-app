@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Combine
 
 @main
 struct financial_tracker_3App: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  @State var appModel = AppModel.mockModel
+  
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
+        .environmentObject(appModel)
     }
+  }
 }

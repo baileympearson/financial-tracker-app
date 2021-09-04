@@ -7,15 +7,35 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
+struct ContentView {
+  @EnvironmentObject var appModel: AppModel
+}
+
+extension ContentView: View {
+  var body: some View {
+    TabView {
+      CurrentMonthView()
+        .tabItem {
+          Image("graph-icon")
+            .renderingMode(.template)
+          Text("Monthly Overview")
+        }
+      NavigationView {
+        HistoryList(transactions: $appModel.transactions)
+          .navigationTitle("Past Months")
+      }.tabItem {
+        Image(systemName: "list.dash")
+        Text("Past Months")
+      }
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+  static var previews: some View {
+    NavigationView {
+      ContentView()
+        .environmentObject(AppModel.mockModel)
     }
+  }
 }
