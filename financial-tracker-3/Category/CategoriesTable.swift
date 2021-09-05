@@ -2,14 +2,16 @@ import SwiftUI
 
 struct CategoriesTable : View {
   @EnvironmentObject var appModel: AppModel
-  @State var isAddCategoryFormShowing = false
+  @EnvironmentObject var categoryService: CategoryService
+  @State private var isAddCategoryFormShowing = false
   
   var body: some View{
     List {
-      ForEach(appModel.categories) {
+      ForEach(categoryService.categories) {
         Text($0.name)
       }
     }
+    .listStyle(InsetGroupedListStyle())
     .toolbar {
       ToolbarItem(placement: .navigationBarTrailing) {
         Button(action: {
@@ -19,11 +21,10 @@ struct CategoriesTable : View {
         })
       }
     }
-    .fullScreenCover(
+    .sheet(
       isPresented: $isAddCategoryFormShowing,
       content: {
         AddCategory(
-          categories: $appModel.categories,
           isFormShowing: $isAddCategoryFormShowing
         )})
     .navigationTitle("Manage Categories")

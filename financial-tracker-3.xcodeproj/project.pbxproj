@@ -20,7 +20,7 @@
 		D41043E726E248BB00C3EBEE /* CurrentMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043E626E248BB00C3EBEE /* CurrentMonth.swift */; };
 		D41043E926E2494C00C3EBEE /* Date+Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043E826E2494C00C3EBEE /* Date+Year.swift */; };
 		D41043EB26E24AA200C3EBEE /* TransactionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043EA26E24AA200C3EBEE /* TransactionCategory.swift */; };
-		D41043EE26E24C9E00C3EBEE /* AddCategoryForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043ED26E24C9E00C3EBEE /* AddCategoryForm.swift */; };
+		D41043EE26E24C9E00C3EBEE /* CategoryNameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043ED26E24C9E00C3EBEE /* CategoryNameField.swift */; };
 		D41043F026E24F7300C3EBEE /* MockCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043EF26E24F7300C3EBEE /* MockCategories.swift */; };
 		D41043F226E24FF300C3EBEE /* MockAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043F126E24FF300C3EBEE /* MockAppModel.swift */; };
 		D41043F826E2C60300C3EBEE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043F726E2C60300C3EBEE /* SettingsView.swift */; };
@@ -28,6 +28,8 @@
 		D41043FD26E3A57100C3EBEE /* CategoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043FC26E3A57100C3EBEE /* CategoryListItem.swift */; };
 		D410440026E3B0BF00C3EBEE /* AddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043FF26E3B0BF00C3EBEE /* AddCategory.swift */; };
 		D410440226E3B15D00C3EBEE /* CategoriesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D410440126E3B15D00C3EBEE /* CategoriesTable.swift */; };
+		D41BE15526E56DA1004AB431 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BE15426E56DA1004AB431 /* TransactionService.swift */; };
+		D41BE15726E56DCA004AB431 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BE15626E56DCA004AB431 /* CategoryService.swift */; };
 		D4622DD426E440D5000B4C40 /* Transaction+GroupedByCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DD326E440D5000B4C40 /* Transaction+GroupedByCategory.swift */; };
 		D4622DD626E442B8000B4C40 /* Transaction+GroupedByMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DD526E442B8000B4C40 /* Transaction+GroupedByMonth.swift */; };
 		D4622DD826E442F9000B4C40 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DD726E442F9000B4C40 /* TransactionType.swift */; };
@@ -74,7 +76,7 @@
 		D41043E626E248BB00C3EBEE /* CurrentMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMonth.swift; sourceTree = "<group>"; };
 		D41043E826E2494C00C3EBEE /* Date+Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Year.swift"; sourceTree = "<group>"; };
 		D41043EA26E24AA200C3EBEE /* TransactionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategory.swift; sourceTree = "<group>"; };
-		D41043ED26E24C9E00C3EBEE /* AddCategoryForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryForm.swift; sourceTree = "<group>"; };
+		D41043ED26E24C9E00C3EBEE /* CategoryNameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryNameField.swift; sourceTree = "<group>"; };
 		D41043EF26E24F7300C3EBEE /* MockCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategories.swift; sourceTree = "<group>"; };
 		D41043F126E24FF300C3EBEE /* MockAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppModel.swift; sourceTree = "<group>"; };
 		D41043F726E2C60300C3EBEE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,8 @@
 		D41043FC26E3A57100C3EBEE /* CategoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListItem.swift; sourceTree = "<group>"; };
 		D41043FF26E3B0BF00C3EBEE /* AddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategory.swift; sourceTree = "<group>"; };
 		D410440126E3B15D00C3EBEE /* CategoriesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTable.swift; sourceTree = "<group>"; };
+		D41BE15426E56DA1004AB431 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
+		D41BE15626E56DCA004AB431 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		D4622DD326E440D5000B4C40 /* Transaction+GroupedByCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+GroupedByCategory.swift"; sourceTree = "<group>"; };
 		D4622DD526E442B8000B4C40 /* Transaction+GroupedByMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+GroupedByMonth.swift"; sourceTree = "<group>"; };
 		D4622DD726E442F9000B4C40 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
@@ -169,7 +173,7 @@
 		D41043EC26E24C8E00C3EBEE /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				D41043ED26E24C9E00C3EBEE /* AddCategoryForm.swift */,
+				D41043ED26E24C9E00C3EBEE /* CategoryNameField.swift */,
 				D41043FA26E3A4DB00C3EBEE /* CategoryList.swift */,
 				D41043FC26E3A57100C3EBEE /* CategoryListItem.swift */,
 				D41043FF26E3B0BF00C3EBEE /* AddCategory.swift */,
@@ -208,6 +212,15 @@
 			path = MonthDetail;
 			sourceTree = "<group>";
 		};
+		D41BE15326E56D8F004AB431 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D41BE15426E56DA1004AB431 /* TransactionService.swift */,
+				D41BE15626E56DCA004AB431 /* CategoryService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		D4622DE426E447D0000B4C40 /* aui-tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +253,7 @@
 		D49005BB26DAD47200EC4B50 /* financial-tracker-3 */ = {
 			isa = PBXGroup;
 			children = (
+				D41BE15326E56D8F004AB431 /* Services */,
 				D4622DDD26E44668000B4C40 /* GoogleService-Info.plist */,
 				D41043FE26E3A68000C3EBEE /* MonthDetail */,
 				D41043F926E3A43B00C3EBEE /* Transaction */,
@@ -435,6 +449,7 @@
 				D4CF528226DDC3D4006722DC /* EditTransactionForm.swift in Sources */,
 				D49005BF26DAD47200EC4B50 /* ContentView.swift in Sources */,
 				D410440226E3B15D00C3EBEE /* CategoriesTable.swift in Sources */,
+				D41BE15726E56DCA004AB431 /* CategoryService.swift in Sources */,
 				D49005D026DAD69000EC4B50 /* TransactionListItem.swift in Sources */,
 				D4CF527E26DD83F0006722DC /* AppModel.swift in Sources */,
 				D4622DD626E442B8000B4C40 /* Transaction+GroupedByMonth.swift in Sources */,
@@ -443,7 +458,7 @@
 				D41043E926E2494C00C3EBEE /* Date+Year.swift in Sources */,
 				D41043F026E24F7300C3EBEE /* MockCategories.swift in Sources */,
 				D41043E326E0E76800C3EBEE /* Date+Day.swift in Sources */,
-				D41043EE26E24C9E00C3EBEE /* AddCategoryForm.swift in Sources */,
+				D41043EE26E24C9E00C3EBEE /* CategoryNameField.swift in Sources */,
 				D41043E526E0E7A600C3EBEE /* Date+Month.swift in Sources */,
 				D41043D426DF98FB00C3EBEE /* HistoryList.swift in Sources */,
 				D4622DDC26E4441F000B4C40 /* firebase.swift in Sources */,
@@ -455,6 +470,7 @@
 				D4CF527A26DC28DF006722DC /* TransactionForm.swift in Sources */,
 				D41043E726E248BB00C3EBEE /* CurrentMonth.swift in Sources */,
 				D41043FB26E3A4DB00C3EBEE /* CategoryList.swift in Sources */,
+				D41BE15526E56DA1004AB431 /* TransactionService.swift in Sources */,
 				D41043DD26E0E1F700C3EBEE /* Array+Take.swift in Sources */,
 				D4CF527C26DC2F6D006722DC /* AddNewTransactionForm.swift in Sources */,
 				D41043D126DE416300C3EBEE /* SpendingOverviewTable.swift in Sources */,
