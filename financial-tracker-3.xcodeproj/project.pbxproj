@@ -33,6 +33,7 @@
 		D4622DD826E442F9000B4C40 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DD726E442F9000B4C40 /* TransactionType.swift */; };
 		D4622DDA26E44330000B4C40 /* Transaction+UniqueMonths.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DD926E44330000B4C40 /* Transaction+UniqueMonths.swift */; };
 		D4622DDC26E4441F000B4C40 /* firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DDB26E4441F000B4C40 /* firebase.swift */; };
+		D4622DDE26E44668000B4C40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4622DDD26E44668000B4C40 /* GoogleService-Info.plist */; };
 		D49005BD26DAD47200EC4B50 /* financial_tracker_3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49005BC26DAD47200EC4B50 /* financial_tracker_3App.swift */; };
 		D49005BF26DAD47200EC4B50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49005BE26DAD47200EC4B50 /* ContentView.swift */; };
 		D49005C126DAD47300EC4B50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D49005C026DAD47300EC4B50 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		D4622DD726E442F9000B4C40 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 		D4622DD926E44330000B4C40 /* Transaction+UniqueMonths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+UniqueMonths.swift"; sourceTree = "<group>"; };
 		D4622DDB26E4441F000B4C40 /* firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebase.swift; sourceTree = "<group>"; };
+		D4622DDD26E44668000B4C40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D49005B926DAD47200EC4B50 /* financial-tracker-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "financial-tracker-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D49005BC26DAD47200EC4B50 /* financial_tracker_3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = financial_tracker_3App.swift; sourceTree = "<group>"; };
 		D49005BE26DAD47200EC4B50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		D49005BB26DAD47200EC4B50 /* financial-tracker-3 */ = {
 			isa = PBXGroup;
 			children = (
+				D4622DDD26E44668000B4C40 /* GoogleService-Info.plist */,
 				D41043FE26E3A68000C3EBEE /* MonthDetail */,
 				D41043F926E3A43B00C3EBEE /* Transaction */,
 				D41043F626E2C5F300C3EBEE /* Settings */,
@@ -306,6 +309,7 @@
 			files = (
 				D49005C426DAD47300EC4B50 /* Preview Assets.xcassets in Resources */,
 				D49005C126DAD47300EC4B50 /* Assets.xcassets in Resources */,
+				D4622DDE26E44668000B4C40 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,7 +534,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.baileypearson.financial-tracker-3";
+				PRODUCT_BUNDLE_IDENTIFIER = com.baileypearson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -553,7 +557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.baileypearson.financial-tracker-3";
+				PRODUCT_BUNDLE_IDENTIFIER = com.baileypearson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
