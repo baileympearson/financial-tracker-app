@@ -34,6 +34,7 @@
 		D4622DDA26E44330000B4C40 /* Transaction+UniqueMonths.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DD926E44330000B4C40 /* Transaction+UniqueMonths.swift */; };
 		D4622DDC26E4441F000B4C40 /* firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DDB26E4441F000B4C40 /* firebase.swift */; };
 		D4622DDE26E44668000B4C40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4622DDD26E44668000B4C40 /* GoogleService-Info.plist */; };
+		D4622DE626E447D0000B4C40 /* aui_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DE526E447D0000B4C40 /* aui_tests.swift */; };
 		D49005BD26DAD47200EC4B50 /* financial_tracker_3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49005BC26DAD47200EC4B50 /* financial_tracker_3App.swift */; };
 		D49005BF26DAD47200EC4B50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49005BE26DAD47200EC4B50 /* ContentView.swift */; };
 		D49005C126DAD47300EC4B50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D49005C026DAD47300EC4B50 /* Assets.xcassets */; };
@@ -46,6 +47,16 @@
 		D4CF528026DDBD46006722DC /* TransactionDetailsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CF527F26DDBD46006722DC /* TransactionDetailsList.swift */; };
 		D4CF528226DDC3D4006722DC /* EditTransactionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CF528126DDC3D4006722DC /* EditTransactionForm.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4622DE826E447D0000B4C40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D49005B126DAD47200EC4B50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D49005B826DAD47200EC4B50;
+			remoteInfo = "financial-tracker-3";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3A36CCF7E279E88815425597 /* Pods_financial_tracker_3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_financial_tracker_3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +88,9 @@
 		D4622DD926E44330000B4C40 /* Transaction+UniqueMonths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+UniqueMonths.swift"; sourceTree = "<group>"; };
 		D4622DDB26E4441F000B4C40 /* firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebase.swift; sourceTree = "<group>"; };
 		D4622DDD26E44668000B4C40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D4622DE326E447D0000B4C40 /* aui-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "aui-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4622DE526E447D0000B4C40 /* aui_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aui_tests.swift; sourceTree = "<group>"; };
+		D4622DE726E447D0000B4C40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D49005B926DAD47200EC4B50 /* financial-tracker-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "financial-tracker-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D49005BC26DAD47200EC4B50 /* financial_tracker_3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = financial_tracker_3App.swift; sourceTree = "<group>"; };
 		D49005BE26DAD47200EC4B50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +107,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D4622DE026E447D0000B4C40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D49005B626DAD47200EC4B50 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,10 +208,20 @@
 			path = MonthDetail;
 			sourceTree = "<group>";
 		};
+		D4622DE426E447D0000B4C40 /* aui-tests */ = {
+			isa = PBXGroup;
+			children = (
+				D4622DE526E447D0000B4C40 /* aui_tests.swift */,
+				D4622DE726E447D0000B4C40 /* Info.plist */,
+			);
+			path = "aui-tests";
+			sourceTree = "<group>";
+		};
 		D49005B026DAD47200EC4B50 = {
 			isa = PBXGroup;
 			children = (
 				D49005BB26DAD47200EC4B50 /* financial-tracker-3 */,
+				D4622DE426E447D0000B4C40 /* aui-tests */,
 				D49005BA26DAD47200EC4B50 /* Products */,
 				9EEB7DB60359BAE46FB0B4D4 /* Pods */,
 				D3D97F94434854A7C9CCD45A /* Frameworks */,
@@ -201,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				D49005B926DAD47200EC4B50 /* financial-tracker-3.app */,
+				D4622DE326E447D0000B4C40 /* aui-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,6 +283,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D4622DE226E447D0000B4C40 /* aui-tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4622DEA26E447D0000B4C40 /* Build configuration list for PBXNativeTarget "aui-tests" */;
+			buildPhases = (
+				D4622DDF26E447D0000B4C40 /* Sources */,
+				D4622DE026E447D0000B4C40 /* Frameworks */,
+				D4622DE126E447D0000B4C40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4622DE926E447D0000B4C40 /* PBXTargetDependency */,
+			);
+			name = "aui-tests";
+			productName = "aui-tests";
+			productReference = D4622DE326E447D0000B4C40 /* aui-tests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		D49005B826DAD47200EC4B50 /* financial-tracker-3 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D49005C826DAD47300EC4B50 /* Build configuration list for PBXNativeTarget "financial-tracker-3" */;
@@ -279,6 +329,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					D4622DE226E447D0000B4C40 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = D49005B826DAD47200EC4B50;
+					};
 					D49005B826DAD47200EC4B50 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -298,11 +352,19 @@
 			projectRoot = "";
 			targets = (
 				D49005B826DAD47200EC4B50 /* financial-tracker-3 */,
+				D4622DE226E447D0000B4C40 /* aui-tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D4622DE126E447D0000B4C40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D49005B726DAD47200EC4B50 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,6 +420,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D4622DDF26E447D0000B4C40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4622DE626E447D0000B4C40 /* aui_tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D49005B526DAD47200EC4B50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,7 +471,53 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D4622DE926E447D0000B4C40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D49005B826DAD47200EC4B50 /* financial-tracker-3 */;
+			targetProxy = D4622DE826E447D0000B4C40 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D4622DEB26E447D0000B4C40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MJTX5ATL35;
+				INFOPLIST_FILE = "aui-tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.baileypearson.aui-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "financial-tracker-3";
+			};
+			name = Debug;
+		};
+		D4622DEC26E447D0000B4C40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MJTX5ATL35;
+				INFOPLIST_FILE = "aui-tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.baileypearson.aui-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "financial-tracker-3";
+			};
+			name = Release;
+		};
 		D49005C626DAD47300EC4B50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -567,6 +683,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D4622DEA26E447D0000B4C40 /* Build configuration list for PBXNativeTarget "aui-tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4622DEB26E447D0000B4C40 /* Debug */,
+				D4622DEC26E447D0000B4C40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D49005B426DAD47200EC4B50 /* Build configuration list for PBXProject "financial-tracker-3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
