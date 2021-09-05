@@ -1,10 +1,3 @@
-//
-//  CurrentMonthView.swift
-//  financial-tracker-3
-//
-//  Created by Bailey Pearson on 9/3/21.
-//
-
 import SwiftUI
 
 struct CurrentMonthView: View {

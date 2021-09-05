@@ -1,10 +1,3 @@
-//
-//  TransactionListItem.swift
-//  financial-tracker-3
-//
-//  Created by Bailey Pearson on 8/28/21.
-//
-
 import SwiftUI
 
 struct TransactionListItem: View {

@@ -1,10 +1,3 @@
-//
-//  HistoryList.swift
-//  financial-tracker-3
-//
-//  Created by Bailey Pearson on 9/1/21.
-//
-
 import SwiftUI
 
 let MAX_TRANSACTIONS = 3

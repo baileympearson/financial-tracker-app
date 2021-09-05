@@ -1,10 +1,3 @@
-//
-//  CategoryListItem.swift
-//  financial-tracker-3
-//
-//  Created by Bailey Pearson on 9/4/21.
-//
-
 import SwiftUI
 
 struct SpendingCategoryListItem: View {

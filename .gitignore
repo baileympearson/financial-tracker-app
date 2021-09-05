@@ -6,3 +6,5 @@ GoogleService-Info.plist
 Secrets
 Secrets.tar
 financial-tracker-3.xcodeproj
+
+financial-tracker-3.xcodeproj/*

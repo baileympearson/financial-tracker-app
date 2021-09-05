@@ -1,10 +1,3 @@
-//
-//  MockTransactions.swift
-//  financial-tracker-3
-//
-//  Created by Bailey Pearson on 9/1/21.
-//
-
 import Foundation
 
 fileprivate func date(from string: String) -> Date {

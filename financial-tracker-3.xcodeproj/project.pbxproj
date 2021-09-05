@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44C78D6EE3FF2A5772C35634 /* Pods_financial_tracker_3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A36CCF7E279E88815425597 /* Pods_financial_tracker_3.framework */; };
 		D41043D126DE416300C3EBEE /* SpendingOverviewTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043D026DE416300C3EBEE /* SpendingOverviewTable.swift */; };
 		D41043D426DF98FB00C3EBEE /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043D326DF98FB00C3EBEE /* HistoryList.swift */; };
 		D41043D626DF9A5B00C3EBEE /* MockTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043D526DF9A5B00C3EBEE /* MockTransactions.swift */; };
@@ -27,6 +28,11 @@
 		D41043FD26E3A57100C3EBEE /* CategoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043FC26E3A57100C3EBEE /* CategoryListItem.swift */; };
 		D410440026E3B0BF00C3EBEE /* AddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41043FF26E3B0BF00C3EBEE /* AddCategory.swift */; };
 		D410440226E3B15D00C3EBEE /* CategoriesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D410440126E3B15D00C3EBEE /* CategoriesTable.swift */; };
+		D4622DD426E440D5000B4C40 /* Transaction+GroupedByCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DD326E440D5000B4C40 /* Transaction+GroupedByCategory.swift */; };
+		D4622DD626E442B8000B4C40 /* Transaction+GroupedByMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DD526E442B8000B4C40 /* Transaction+GroupedByMonth.swift */; };
+		D4622DD826E442F9000B4C40 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DD726E442F9000B4C40 /* TransactionType.swift */; };
+		D4622DDA26E44330000B4C40 /* Transaction+UniqueMonths.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DD926E44330000B4C40 /* Transaction+UniqueMonths.swift */; };
+		D4622DDC26E4441F000B4C40 /* firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DDB26E4441F000B4C40 /* firebase.swift */; };
 		D49005BD26DAD47200EC4B50 /* financial_tracker_3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49005BC26DAD47200EC4B50 /* financial_tracker_3App.swift */; };
 		D49005BF26DAD47200EC4B50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49005BE26DAD47200EC4B50 /* ContentView.swift */; };
 		D49005C126DAD47300EC4B50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D49005C026DAD47300EC4B50 /* Assets.xcassets */; };
@@ -41,6 +47,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A36CCF7E279E88815425597 /* Pods_financial_tracker_3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_financial_tracker_3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E3C8BA8FBCC5FD8598D2C68 /* Pods-financial-tracker-3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-financial-tracker-3.release.xcconfig"; path = "Target Support Files/Pods-financial-tracker-3/Pods-financial-tracker-3.release.xcconfig"; sourceTree = "<group>"; };
+		7698D377CEB0E44189AE824A /* Pods-financial-tracker-3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-financial-tracker-3.debug.xcconfig"; path = "Target Support Files/Pods-financial-tracker-3/Pods-financial-tracker-3.debug.xcconfig"; sourceTree = "<group>"; };
 		D41043D026DE416300C3EBEE /* SpendingOverviewTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingOverviewTable.swift; sourceTree = "<group>"; };
 		D41043D326DF98FB00C3EBEE /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
 		D41043D526DF9A5B00C3EBEE /* MockTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransactions.swift; sourceTree = "<group>"; };
@@ -61,6 +70,11 @@
 		D41043FC26E3A57100C3EBEE /* CategoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListItem.swift; sourceTree = "<group>"; };
 		D41043FF26E3B0BF00C3EBEE /* AddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategory.swift; sourceTree = "<group>"; };
 		D410440126E3B15D00C3EBEE /* CategoriesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTable.swift; sourceTree = "<group>"; };
+		D4622DD326E440D5000B4C40 /* Transaction+GroupedByCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+GroupedByCategory.swift"; sourceTree = "<group>"; };
+		D4622DD526E442B8000B4C40 /* Transaction+GroupedByMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+GroupedByMonth.swift"; sourceTree = "<group>"; };
+		D4622DD726E442F9000B4C40 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
+		D4622DD926E44330000B4C40 /* Transaction+UniqueMonths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+UniqueMonths.swift"; sourceTree = "<group>"; };
+		D4622DDB26E4441F000B4C40 /* firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebase.swift; sourceTree = "<group>"; };
 		D49005B926DAD47200EC4B50 /* financial-tracker-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "financial-tracker-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D49005BC26DAD47200EC4B50 /* financial_tracker_3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = financial_tracker_3App.swift; sourceTree = "<group>"; };
 		D49005BE26DAD47200EC4B50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,12 +95,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C78D6EE3FF2A5772C35634 /* Pods_financial_tracker_3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9EEB7DB60359BAE46FB0B4D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7698D377CEB0E44189AE824A /* Pods-financial-tracker-3.debug.xcconfig */,
+				5E3C8BA8FBCC5FD8598D2C68 /* Pods-financial-tracker-3.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D3D97F94434854A7C9CCD45A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A36CCF7E279E88815425597 /* Pods_financial_tracker_3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D41043D226DF98E800C3EBEE /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +136,9 @@
 				D41043E226E0E76800C3EBEE /* Date+Day.swift */,
 				D41043E426E0E7A600C3EBEE /* Date+Month.swift */,
 				D41043E826E2494C00C3EBEE /* Date+Year.swift */,
+				D4622DD326E440D5000B4C40 /* Transaction+GroupedByCategory.swift */,
+				D4622DD526E442B8000B4C40 /* Transaction+GroupedByMonth.swift */,
+				D4622DD926E44330000B4C40 /* Transaction+UniqueMonths.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -155,6 +190,8 @@
 			children = (
 				D49005BB26DAD47200EC4B50 /* financial-tracker-3 */,
 				D49005BA26DAD47200EC4B50 /* Products */,
+				9EEB7DB60359BAE46FB0B4D4 /* Pods */,
+				D3D97F94434854A7C9CCD45A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +218,7 @@
 				D49005C026DAD47300EC4B50 /* Assets.xcassets */,
 				D49005C526DAD47300EC4B50 /* Info.plist */,
 				D49005C226DAD47300EC4B50 /* Preview Content */,
+				D4622DDB26E4441F000B4C40 /* firebase.swift */,
 			);
 			path = "financial-tracker-3";
 			sourceTree = "<group>";
@@ -202,6 +240,7 @@
 				D49005CB26DAD55C00EC4B50 /* Transaction.swift */,
 				D4CF527D26DD83F0006722DC /* AppModel.swift */,
 				D41043EA26E24AA200C3EBEE /* TransactionCategory.swift */,
+				D4622DD726E442F9000B4C40 /* TransactionType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,9 +252,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D49005C826DAD47300EC4B50 /* Build configuration list for PBXNativeTarget "financial-tracker-3" */;
 			buildPhases = (
+				5C463FC04D8AA311484CAE0D /* [CP] Check Pods Manifest.lock */,
 				D49005B526DAD47200EC4B50 /* Sources */,
 				D49005B626DAD47200EC4B50 /* Frameworks */,
 				D49005B726DAD47200EC4B50 /* Resources */,
+				71975EA0A8684E95DA58C0E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -270,6 +311,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C463FC04D8AA311484CAE0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-financial-tracker-3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71975EA0A8684E95DA58C0E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-financial-tracker-3/Pods-financial-tracker-3-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-financial-tracker-3/Pods-financial-tracker-3-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-financial-tracker-3/Pods-financial-tracker-3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D49005B526DAD47200EC4B50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -280,13 +363,17 @@
 				D410440226E3B15D00C3EBEE /* CategoriesTable.swift in Sources */,
 				D49005D026DAD69000EC4B50 /* TransactionListItem.swift in Sources */,
 				D4CF527E26DD83F0006722DC /* AppModel.swift in Sources */,
+				D4622DD626E442B8000B4C40 /* Transaction+GroupedByMonth.swift in Sources */,
 				D49005BD26DAD47200EC4B50 /* financial_tracker_3App.swift in Sources */,
+				D4622DD426E440D5000B4C40 /* Transaction+GroupedByCategory.swift in Sources */,
 				D41043E926E2494C00C3EBEE /* Date+Year.swift in Sources */,
 				D41043F026E24F7300C3EBEE /* MockCategories.swift in Sources */,
 				D41043E326E0E76800C3EBEE /* Date+Day.swift in Sources */,
 				D41043EE26E24C9E00C3EBEE /* AddCategoryForm.swift in Sources */,
 				D41043E526E0E7A600C3EBEE /* Date+Month.swift in Sources */,
 				D41043D426DF98FB00C3EBEE /* HistoryList.swift in Sources */,
+				D4622DDC26E4441F000B4C40 /* firebase.swift in Sources */,
+				D4622DDA26E44330000B4C40 /* Transaction+UniqueMonths.swift in Sources */,
 				D410440026E3B0BF00C3EBEE /* AddCategory.swift in Sources */,
 				D41043DA26E00C5600C3EBEE /* MonthDetail.swift in Sources */,
 				D41043D626DF9A5B00C3EBEE /* MockTransactions.swift in Sources */,
@@ -297,6 +384,7 @@
 				D41043DD26E0E1F700C3EBEE /* Array+Take.swift in Sources */,
 				D4CF527C26DC2F6D006722DC /* AddNewTransactionForm.swift in Sources */,
 				D41043D126DE416300C3EBEE /* SpendingOverviewTable.swift in Sources */,
+				D4622DD826E442F9000B4C40 /* TransactionType.swift in Sources */,
 				D41043F826E2C60300C3EBEE /* SettingsView.swift in Sources */,
 				D49005CC26DAD55C00EC4B50 /* Transaction.swift in Sources */,
 				D41043F226E24FF300C3EBEE /* MockAppModel.swift in Sources */,
@@ -428,6 +516,7 @@
 		};
 		D49005C926DAD47300EC4B50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7698D377CEB0E44189AE824A /* Pods-financial-tracker-3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -450,6 +539,7 @@
 		};
 		D49005CA26DAD47300EC4B50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E3C8BA8FBCC5FD8598D2C68 /* Pods-financial-tracker-3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

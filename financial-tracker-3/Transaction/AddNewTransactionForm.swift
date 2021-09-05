@@ -1,10 +1,3 @@
-//
-//  AddNewTransactionForm.swift
-//  financial-tracker-3
-//
-//  Created by Bailey Pearson on 8/29/21.
-//
-
 import SwiftUI
 
 struct AddNewTransactionForm: View {
