@@ -10,9 +10,12 @@ class TransactionService : ObservableObject {
   func fetchTransactions() {
     let collection = db.collection(TransactionService.COLLECTION_KEY)
     
-    collection.addSnapshotListener { [weak self] (snapshot, error) in
+    collection
+      .order(by: "date", descending: true)
+      .addSnapshotListener { [weak self] (snapshot, error) in
       guard let documents = snapshot?.documents else {
-        print("No categories")
+        // TODO: handle error properly
+        print("No transactions")
         return
       }
       
@@ -20,8 +23,36 @@ class TransactionService : ObservableObject {
         return try? querySnapshot.data(as: Transaction.self)
       }
       
-      print(results)
       self?.transactions = results
     }
+  }
+  
+  func add(transaction: Transaction) {
+    let collection = db.collection(TransactionService.COLLECTION_KEY)
+    do {
+      let _ = try collection.addDocument(from: transaction)
+    } catch {
+      // TODO: handle error
+      print("error error")
+    }
+  }
+  
+  func update(transaction: Transaction) {
+    guard let documentId = transaction.id else { return }
+    
+    let document = db.collection(TransactionService.COLLECTION_KEY).document(documentId)
+    do {
+      try document.setData(from: transaction)
+    } catch {
+      // TODO: handle error
+      print("error error")
+    }
+  }
+  
+  func delete(transaction: Transaction) {
+    guard let documentId = transaction.id else { return }
+    
+    let document = db.collection(TransactionService.COLLECTION_KEY).document(documentId)
+    document.delete()
   }
 }

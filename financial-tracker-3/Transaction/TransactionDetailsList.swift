@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TransactionDetailsList: View {
   var month: String
-  @EnvironmentObject var appModel: AppModel
+  @EnvironmentObject var transactionService: TransactionService
   @State private var editMode: EditMode = .inactive
   @State private var isEditingTransaction = false
   @State private var editingTransaction: Transaction? = nil
@@ -11,7 +11,7 @@ struct TransactionDetailsList: View {
     
   var body: some View {
     List {
-      ForEach(appModel.transactions.transactionsInCurrentMonth) { transaction in
+      ForEach(transactionService.transactions.transactionsInCurrentMonth) { transaction in
           TransactionListItem(transaction: transaction)
             .onTapGesture {
               formViewModel.reset(to: transaction)
@@ -30,7 +30,7 @@ struct TransactionDetailsList: View {
       NavigationView {
         TransactionForm()
           .environmentObject(formViewModel.onSave() { transaction in
-            appModel.update(transaction: transaction)
+            transactionService.update(transaction: transaction)
             isEditingTransaction = false
           })
           .toolbar {
@@ -50,7 +50,10 @@ struct TransactionDetailsList: View {
   }
   
   func deleteTransaction(index: IndexSet) {
-    appModel.transactions.remove(atOffsets: index)
+    let transactions = index.map({ transactionService.transactions[$0] })
+    transactions.forEach {
+      transactionService.delete(transaction: $0)
+    }
   }
 }
 

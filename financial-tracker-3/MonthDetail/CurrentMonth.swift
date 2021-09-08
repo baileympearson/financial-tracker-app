@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct CurrentMonthView: View {
-  @EnvironmentObject var appModel: AppModel
   @State var isAddingTransaction = false
   @State var isSettingsPageActive = false
   

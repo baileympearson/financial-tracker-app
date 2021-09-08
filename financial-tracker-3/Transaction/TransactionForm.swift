@@ -58,8 +58,8 @@ class TransactionFormViewModel: ObservableObject {
 }
 
 struct TransactionForm: View {
-  @EnvironmentObject var appModel: AppModel
   @EnvironmentObject var viewModel: TransactionFormViewModel
+  @EnvironmentObject var categoryService: CategoryService
   
   var body: some View {
     Form {
@@ -84,7 +84,7 @@ struct TransactionForm: View {
         }.pickerStyle(SegmentedPickerStyle())
         
         Picker("Category", selection: $viewModel.category, content: {
-          ForEach(appModel.categories) { category in
+          ForEach(categoryService.categories) { category in
             Text(category.name).tag(category)
           }
         })

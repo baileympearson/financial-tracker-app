@@ -4,7 +4,6 @@ import Firebase
 
 @main
 struct financial_tracker_3App: App {
-  @State var appModel = AppModel.mockModel
   @ObservedObject var transactionService: TransactionService
   @ObservedObject var categoryService: CategoryService
 
@@ -19,7 +18,6 @@ struct financial_tracker_3App: App {
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .environmentObject(appModel)
         .environmentObject(transactionService)
         .environmentObject(categoryService)
     }

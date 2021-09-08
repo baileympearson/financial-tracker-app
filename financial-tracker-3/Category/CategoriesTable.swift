@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct CategoriesTable : View {
-  @EnvironmentObject var appModel: AppModel
   @EnvironmentObject var categoryService: CategoryService
   @State private var isAddCategoryFormShowing = false
   

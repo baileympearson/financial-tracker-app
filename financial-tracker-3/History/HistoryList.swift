@@ -3,11 +3,11 @@ import SwiftUI
 let MAX_TRANSACTIONS = 3
 
 struct HistoryList: View {
-  @EnvironmentObject var appModel: AppModel
+  @EnvironmentObject var transactionService: TransactionService
   
   var body: some View {
     List {
-      ForEach(appModel.transactions.uniqueMonths, id: \.year ) { (year, months) in
+      ForEach(transactionService.transactions.uniqueMonths, id: \.year ) { (year, months) in
         Section(header: Text("\(year)")) {
           ForEach(months, id: \.self) { month in
             NavigationLink(

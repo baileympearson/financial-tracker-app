@@ -1,10 +1,6 @@
 import SwiftUI
 
-struct ContentView {
-  @EnvironmentObject var appModel: AppModel
-}
-
-extension ContentView: View {
+struct ContentView: View {
   var body: some View {
     TabView {
       CurrentMonthView()

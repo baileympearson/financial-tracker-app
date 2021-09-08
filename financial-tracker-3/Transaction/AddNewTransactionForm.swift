@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AddNewTransactionForm: View {
-  @EnvironmentObject var appModel: AppModel
+  @EnvironmentObject var transactionService: TransactionService
   @State private var formViewModel = TransactionFormViewModel(from: .empty)
   @State private var transaction: Transaction = .empty
   @State private var isSuccessAlertShowing = false
@@ -37,7 +37,7 @@ struct AddNewTransactionForm: View {
   
   func saveButtonClicked(_ transaction: Transaction) {
     let transaction = formViewModel.transaction()
-    appModel.transactions.insert(transaction, at: 0)
+    transactionService.add(transaction: transaction)
     isSuccessAlertShowing = true
   }
 }

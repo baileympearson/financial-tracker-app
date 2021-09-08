@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MonthDetail: View {
-  @EnvironmentObject var appModel: AppModel
+  @EnvironmentObject var transactionService: TransactionService
   let year: String
   let month: String
   
@@ -11,7 +11,7 @@ struct MonthDetail: View {
   
   var transactionsForMonth: [Transaction] {
     let key = "\(year) \(month)"
-    return appModel.transactions.groupedByMonth[key] ?? []
+    return transactionService.transactions.groupedByMonth[key] ?? []
   }
   
   var body: some View {
