@@ -1,7 +1,8 @@
 import SwiftUI
+import Resolver
 
 struct MonthDetail: View {
-  @EnvironmentObject var transactionService: TransactionService
+  @ObservedObject var transactionService: TransactionService = Resolver.resolve()
   let year: String
   let month: String
   

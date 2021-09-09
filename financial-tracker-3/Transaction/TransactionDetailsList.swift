@@ -1,8 +1,9 @@
 import SwiftUI
+import Resolver
 
 struct TransactionDetailsList: View {
   var month: String
-  @EnvironmentObject var transactionService: TransactionService
+  @ObservedObject var transactionService: TransactionService = Resolver.resolve()
   @State private var editMode: EditMode = .inactive
   @State private var isEditingTransaction = false
   @State private var editingTransaction: Transaction? = nil

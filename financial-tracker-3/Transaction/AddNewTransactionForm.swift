@@ -1,7 +1,8 @@
 import SwiftUI
+import Resolver
 
 struct AddNewTransactionForm: View {
-  @EnvironmentObject var transactionService: TransactionService
+  @ObservedObject var transactionService: TransactionService = Resolver.resolve()
   @State private var formViewModel = TransactionFormViewModel(from: .empty)
   @State private var transaction: Transaction = .empty
   @State private var isSuccessAlertShowing = false

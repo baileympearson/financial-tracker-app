@@ -1,25 +1,21 @@
 import SwiftUI
 import Combine
 import Firebase
+import Resolver
 
 @main
 struct financial_tracker_3App: App {
-  @ObservedObject var transactionService: TransactionService
-  @ObservedObject var categoryService: CategoryService
-
   init() {
     configureFirebase()
-    transactionService = TransactionService()
-    categoryService = CategoryService()
+    let transactionService: TransactionService = Resolver.resolve()
+    let categoryService: CategoryService = Resolver.resolve()
     transactionService.fetchTransactions()
-    categoryService.get()
+    categoryService.loadCategories()
   }
   
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .environmentObject(transactionService)
-        .environmentObject(categoryService)
     }
   }
 }

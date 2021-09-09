@@ -37,6 +37,7 @@
 		D4622DDC26E4441F000B4C40 /* firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DDB26E4441F000B4C40 /* firebase.swift */; };
 		D4622DDE26E44668000B4C40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4622DDD26E44668000B4C40 /* GoogleService-Info.plist */; };
 		D4622DE626E447D0000B4C40 /* aui_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4622DE526E447D0000B4C40 /* aui_tests.swift */; };
+		D473308926E99A04000DF283 /* financial_tracker_3App+Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D473308826E99A04000DF283 /* financial_tracker_3App+Resolver.swift */; };
 		D49005BD26DAD47200EC4B50 /* financial_tracker_3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49005BC26DAD47200EC4B50 /* financial_tracker_3App.swift */; };
 		D49005BF26DAD47200EC4B50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49005BE26DAD47200EC4B50 /* ContentView.swift */; };
 		D49005C126DAD47300EC4B50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D49005C026DAD47300EC4B50 /* Assets.xcassets */; };
@@ -95,6 +96,7 @@
 		D4622DE326E447D0000B4C40 /* aui-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "aui-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4622DE526E447D0000B4C40 /* aui_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aui_tests.swift; sourceTree = "<group>"; };
 		D4622DE726E447D0000B4C40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D473308826E99A04000DF283 /* financial_tracker_3App+Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "financial_tracker_3App+Resolver.swift"; sourceTree = "<group>"; };
 		D49005B926DAD47200EC4B50 /* financial-tracker-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "financial-tracker-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D49005BC26DAD47200EC4B50 /* financial_tracker_3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = financial_tracker_3App.swift; sourceTree = "<group>"; };
 		D49005BE26DAD47200EC4B50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		D49005B026DAD47200EC4B50 = {
 			isa = PBXGroup;
 			children = (
+				D473308826E99A04000DF283 /* financial_tracker_3App+Resolver.swift */,
 				D49005BB26DAD47200EC4B50 /* financial-tracker-3 */,
 				D4622DE426E447D0000B4C40 /* aui-tests */,
 				D49005BA26DAD47200EC4B50 /* Products */,
@@ -482,6 +485,7 @@
 				D41043EB26E24AA200C3EBEE /* TransactionCategory.swift in Sources */,
 				D41043FD26E3A57100C3EBEE /* CategoryListItem.swift in Sources */,
 				D4CF528026DDBD46006722DC /* TransactionDetailsList.swift in Sources */,
+				D473308926E99A04000DF283 /* financial_tracker_3App+Resolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

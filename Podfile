@@ -8,5 +8,7 @@ target 'financial-tracker-3' do
   # Pods for financial-tracker-3
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift', '> 7.0-beta'
+  
+  pod 'Resolver'
 
 end

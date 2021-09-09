@@ -1,7 +1,8 @@
 import SwiftUI
+import Resolver
 
 struct CategoriesTable : View {
-  @EnvironmentObject var categoryService: CategoryService
+  @ObservedObject var categoryService: CategoryService = Resolver.resolve()
   @State private var isAddCategoryFormShowing = false
   
   var body: some View{

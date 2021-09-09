@@ -1,11 +1,12 @@
 import SwiftUI
+import Resolver
 
 fileprivate enum ActiveAlert {
   case error, success
 }
 
 struct AddCategory: View {
-  @EnvironmentObject var categoryService: CategoryService
+  @ObservedObject var categoryService: CategoryService = Resolver.resolve()
   @State var category = TransactionCategory(name: "")
   @Binding var isFormShowing: Bool
   @State private var isAlertShowing = false

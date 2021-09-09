@@ -1,10 +1,11 @@
 import SwiftUI
+import Resolver
 
 let MAX_TRANSACTIONS = 3
 
 struct HistoryList: View {
-  @EnvironmentObject var transactionService: TransactionService
-  
+  @ObservedObject var transactionService: TransactionService = Resolver.resolve()
+
   var body: some View {
     List {
       ForEach(transactionService.transactions.uniqueMonths, id: \.year ) { (year, months) in

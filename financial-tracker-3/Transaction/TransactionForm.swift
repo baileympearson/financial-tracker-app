@@ -1,4 +1,5 @@
 import SwiftUI
+import Resolver
 import Combine
 
 class TransactionFormViewModel: ObservableObject {
@@ -59,8 +60,8 @@ class TransactionFormViewModel: ObservableObject {
 
 struct TransactionForm: View {
   @EnvironmentObject var viewModel: TransactionFormViewModel
-  @EnvironmentObject var categoryService: CategoryService
-  
+  @ObservedObject var categoryService: CategoryService = Resolver.resolve()
+
   var body: some View {
     Form {
       Section {
