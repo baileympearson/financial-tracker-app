@@ -59,7 +59,7 @@ struct AddCategory: View {
   
   func addCategory() {
     do {
-      try categoryService.addCategory(category)
+      try categoryService.add(category)
       activeAlert = .success
     } catch {
       activeAlert = .error

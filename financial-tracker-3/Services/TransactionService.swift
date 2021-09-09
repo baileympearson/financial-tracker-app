@@ -4,12 +4,11 @@ import Firebase
 class TransactionService : ObservableObject {
   @Published var transactions: [Transaction] = []
   private var db = Firestore.firestore()
-  
-  private static let COLLECTION_KEY = "transactions"
-  
-  func fetchTransactions() {
-    let collection = db.collection(TransactionService.COLLECTION_KEY)
+  private var collection: CollectionReference {
+    db.collection("transactions")
+  }
     
+  func fetchTransactions() {
     collection
       .order(by: "date", descending: true)
       .addSnapshotListener { [weak self] (snapshot, error) in
@@ -28,7 +27,6 @@ class TransactionService : ObservableObject {
   }
   
   func add(transaction: Transaction) {
-    let collection = db.collection(TransactionService.COLLECTION_KEY)
     do {
       let _ = try collection.addDocument(from: transaction)
     } catch {
@@ -40,7 +38,7 @@ class TransactionService : ObservableObject {
   func update(transaction: Transaction) {
     guard let documentId = transaction.id else { return }
     
-    let document = db.collection(TransactionService.COLLECTION_KEY).document(documentId)
+    let document = collection.document(documentId)
     do {
       try document.setData(from: transaction)
     } catch {
@@ -52,7 +50,7 @@ class TransactionService : ObservableObject {
   func delete(transaction: Transaction) {
     guard let documentId = transaction.id else { return }
     
-    let document = db.collection(TransactionService.COLLECTION_KEY).document(documentId)
+    let document = collection.document(documentId)
     document.delete()
   }
 }

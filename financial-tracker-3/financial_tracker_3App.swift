@@ -12,7 +12,7 @@ struct financial_tracker_3App: App {
     transactionService = TransactionService()
     categoryService = CategoryService()
     transactionService.fetchTransactions()
-    categoryService.loadCategories()
+    categoryService.get()
   }
   
   var body: some Scene {
